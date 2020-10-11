@@ -1,22 +1,20 @@
-console.log([{"key":"chave-api-dados","value":"da3539c7361337f299b88390a36bf855"}]);
+function pesquisar() {
+  var cidade = 4312401;
+    const url = 'http://www.portaltransparencia.gov.br/api-de-dados/bolsa-familia-por-municipio?mesAno=202001&codigoIbge='+cidade+'&pagina=1';
 
-document.addEventListener("DOMContentLoaded", function(event) {
-    var data = 1;
-    var fase = 1;
-    var pagina = 1;
-    const url = "http://www.portaltransparencia.gov.br/api-de-dados/despesas/documentos?dataEmissao="+data+"&fase="+fase+"&pagina="+pagina;
-    fetch(url)
-    .then(response => response.json())
-    .then(personagem => {
-        console.log(personagem);
-        document.querySelector(".nome").innerHTML = personagem.name;
-        document.querySelector('img').src = personagem.sprites['front_default'];
-        if(personagem.types.length == 1){
-            document.querySelector(".type").innerHTML = personagem.types[0]['type']['name'];
-        }else{
-            document.querySelector(".type").innerHTML = personagem.types[0]['type']['name']+", "+personagem.types[1]['type']['name'];
-        }
-        document.querySelector(".height").innerHTML = (personagem.height/10)+"m(s)";
-        document.querySelector(".weight").innerHTML = (personagem.weight/10)+"kg";
-    });
-});
+    var xhr = new XMLHttpRequest();
+
+     xhr.open("GET","https://cors-anywhere.herokuapp.com/"+url);
+     xhr.setRequestHeader("chave-api-dados", "da3539c7361337f299b88390a36bf855");
+    xhr.setRequestHeader("Accept", "*/*");
+    xhr.send(null);
+
+    xhr.onreadystatechange = function() {
+      if(xhr.readyState === 4){
+        var name = JSON.parse(xhr.responseText)[0]['municipio']['nomeIBGE'];
+        document.getElementById('cidadeDiv').innerHTML = "Cidade: "+(name.charAt(0).toUpperCase() + (name.slice(1)).toLowerCase());
+        document.getElementById('pessoasDiv').innerHTML = "Pessoas beneficiadas pelo Bolsa Família: "+JSON.parse(xhr.responseText)[0]['quantidadeBeneficiados'];
+        document.getElementById('valorDiv').innerHTML = "Valor total de gastos: "+JSON.parse(xhr.responseText)[0]['valor']+" Reais";
+      }
+    }
+}
