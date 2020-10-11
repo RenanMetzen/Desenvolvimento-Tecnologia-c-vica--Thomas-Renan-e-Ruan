@@ -5,28 +5,41 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <title>API Despesas</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src='js/main.js'></script>
 </head>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Bolsa Família</a>
 </nav>
 <div class="form-row col-md-12">
   <div class="form-group col-md-4"></div>
-  <div class="form-group col-md-4">
+  <div class="form-group col-md-4" id="selects">
     <label for="exampleFormControlSelect1">Cidade</label>
     <select class="form-control" id="cidade">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
+      <option value=4300570>Alto Feliz</option>
+      <option value=4301651>Barão</option>
+      <option value=4302352>Bom Princípio</option>
+      <option value=4302659>Brochier</option>
+      <option value=4304689>Capela de Santana</option>
+      <option value=4308102>Feliz</option>
+      <option value=4309555>Harmonia</option>
+      <option value=4311643>Linha Nova</option>
+      <option value=4311791>Maratá</option>
+      <option value=4312401>Montenegro</option>
+      <option value=4314035>Pareci Novo</option>
+      <option value=4316501>Salvador do Sul</option>
+      <option value=4318614>São José do Sul</option>
+      <option value=4319356>São Pedro da Serra</option>
+      <option value=4319505>São Sebastião do Caí</option>
+      <option value=4319752>São Vendelino</option>
+      <option value=4322251>Tupandi</option>
+      <option value=4322541>Vale Real</option>
     </select>
-  </div>
+    <label for="exampleFormControlSelect1">Mês</label>
+    <select class="form-control" id="mes"></select>
+    </div>
 </div>
 <div class="form-row col-md-12">
   <div class="form-group col-md-4"></div>
@@ -39,9 +52,11 @@
   <div class="form-group col-md-4"></div>
   <div style="background-color:#d3d3d3; border-radius:9px; height:400px; display:flex; flex-direction:column; justify-content:space-evenly;" class="form-group col-md-4">
     <div style="padding-left:20"><h4 id="cidadeDiv">Cidade:</h4></div>
-    <div style="padding-left:20"><h5 id="pessoasDiv">Pessoas beneficiadas pelo Bolsa Família:</h5></div>
+    <div style="padding-left:20"><h4 id="mesDiv">Mês/Ano:</h4></div>
+    <div style="padding-left:20"><h5 id="pessoasDiv">Pessoas beneficiadas:</h5></div>
     <div style="padding-left:20"><h5 id="valorDiv">Valor total de gastos:</h5></div>
   </div>
   <div class="form-group col-md-4"></div>
 </div>
+<script src='js/main.js'></script>
 </html>
