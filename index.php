@@ -10,14 +10,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Bolsa Família</a>
-</nav>
-<div class="form-row col-md-12">
-  <div class="form-group col-md-4"></div>
-  <div class="form-group col-md-4" id="selects">
-    <label for="exampleFormControlSelect1">Cidade</label>
-    <select class="form-control" id="cidade">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="display: flex; flex-direction: row; justify-content: space-between;">
+  <div style="width: 30%; text-align:center;">
+    <h4 class="navbar-brand" href="#">Bolsa Família - Vale do Caí</h4>
+  </div>
+  <div style="width: 40%; display: flex; flex-direction: row; justify-content: space-around;">
+    <select  class="form-control" id="cidade" style="width: 180px;">
+      <option value="" disabled hidden selected>Cidade</option>
       <option value=4300570>Alto Feliz</option>
       <option value=4301651>Barão</option>
       <option value=4302352>Bom Princípio</option>
@@ -37,26 +36,23 @@
       <option value=4322251>Tupandi</option>
       <option value=4322541>Vale Real</option>
     </select>
-    <label for="exampleFormControlSelect1">Mês</label>
-    <select class="form-control" id="mes"></select>
-    </div>
-</div>
-<div class="form-row col-md-12">
-  <div class="form-group col-md-4"></div>
-  <div class="form-group col-md-4" style="display:flex; justify-content:space-between;">
-    <div></div>
-    <button type="button" onclick="return pesquisar()" class="btn btn-secondary">Consultar</button>
+    <select class="form-control" id="mes" style="width: 180px;"></select> 
+    <button type="button" onclick="return pesquisar()" class="btn btn-secondary" style="width: 90px;">Consultar</button>
   </div>
-</div>
+</nav><br>
 <div class="form-row col-md-12">
-  <div class="form-group col-md-4"></div>
-  <div style="background-color:#d3d3d3; border-radius:9px; height:400px; display:flex; flex-direction:column; justify-content:space-evenly;" class="form-group col-md-4">
-    <div style="padding-left:20"><h4 id="cidadeDiv">Cidade:</h4></div>
-    <div style="padding-left:20"><h4 id="mesDiv">Mês/Ano:</h4></div>
-    <div style="padding-left:20"><h5 id="pessoasDiv">Pessoas beneficiadas:</h5></div>
-    <div style="padding-left:20"><h5 id="valorDiv">Valor total de gastos:</h5></div>
+  <div class="form-group col-md-1"></div>
+  <div style="background-color:#d3d3d3; border-radius:9px; height:400px; display:flex; flex-direction:column; justify-content:space-evenly;" class="form-group col-md-6">
+    <div style="padding-left:20; display: flex; flex-direction: row; width:90%; justify-content: space-between;"><h5 style="font-weight: bold;">Cidade: </h5><h5 id="cidadeDiv"></h5></div>
+    <div style="padding-left:20; display: flex; flex-direction: row; width:90%; justify-content: space-between;"><h5 style="font-weight: bold;">Mês/Ano: </h5><h5 id="mesDiv"> </h5></div>
+    <div style="padding-left:20; display: flex; flex-direction: row; width:90%; justify-content: space-between;"><h4 style="font-weight: bold;">Pessoas beneficiadas: </h4><h4 id="pessoasDiv"></h4></div>
+    <div style="padding-left:20; display: flex; flex-direction: row; width:90%; justify-content: space-between;"><h4 style="font-weight: bold;">Valor total de gastos: </h4><h4 id="valorDiv"></h4></div>
   </div>
-  <div class="form-group col-md-4"></div>
+  <div class="form-group col-md-1"></div>
+  <div style="background-color:#d3d4d3; border-radius:9px; height:220px; display:flex; flex-direction:column; justify-content: space-evenly" class="form-group col-md-3">
+    <div style="padding-left: 20; padding-top:20;"><a href="https://www.gov.br/cidadania/pt-br/acoes-e-programas/bolsa-familia" target="_blank"><h5>O que é o Bolsa-Família?</h5></a></div>
+    <img style="padding-left: 20; width:70%;" src="bf.png">
+  </div>
 </div>
 <script src='js/main.js'></script>
 </html>
