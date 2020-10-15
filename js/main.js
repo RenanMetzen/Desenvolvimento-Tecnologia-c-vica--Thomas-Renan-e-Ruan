@@ -24,6 +24,15 @@ function pesquisar() {
       document.getElementById('pessoasDiv').innerHTML = JSON.parse(xhr.responseText)[0]['quantidadeBeneficiados'];
       document.getElementById('valorDiv').innerHTML = " R$" + JSON.parse(xhr.responseText)[0]['valor'];
       document.getElementById('mesDiv').innerHTML = meses[mes - 1] + "/" + aux.getFullYear();
+      let nome = "";
+      let total = JSON.parse(xhr.responseText)[0]['municipio']['nomeIBGEsemAcento'].toLowerCase().split(" ");
+      for (let index = 0; index < total.length; index++) {
+        nome+=total[index];
+        if(index<total.length-1){
+          nome+="-";
+        }
+      }
+      document.getElementById('site').innerHTML = '<h5>Site IBGE do município:</h5><a target="_blank" href="https://cidades.ibge.gov.br/brasil/rs/'+nome+'">'+(name.charAt(0).toUpperCase() + (name.slice(1)).toLowerCase())+'</a>';
     }
   }
 }
