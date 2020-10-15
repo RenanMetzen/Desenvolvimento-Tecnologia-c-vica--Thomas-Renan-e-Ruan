@@ -52,7 +52,6 @@
   <div class="form-group col-md-3" style="display: flex; flex-direction: column; justify-content: space-between;">
     <div style="background-color: LightGreen; border-radius:9px; height:200px; display:flex; flex-direction:column; justify-content: space-evenly">
       <div style="padding-left: 20; padding-top:10;"><a href="https://www.gov.br/cidadania/pt-br/acoes-e-programas/bolsa-familia" target="_blank"><h5>O que é o Bolsa-Família?</h5></a></div>
-      <img style="padding-left: 20; width:70%;" src="bf.png">
     </div>
     <div style="background-color:LightSkyBlue; border-radius:9px; height:150px">
       <div style="padding-left: 20; padding-top:20;" id="site"><h5>Site IBGE do município:</h5></div>
